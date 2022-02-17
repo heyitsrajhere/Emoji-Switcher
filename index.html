@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		Emoji Switcher
+	</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			overflow: hidden;
+			width: 100%;
+			display: flex;
+			background: #f6f7fc;
+			align-items: center;
+			justify-content: center;
+		}
+		#emoji-btn{
+			font-size: 3rem;
+			filter: grayscale(1);
+			transition: .1s;
+			border: none;
+			cursor: pointer;
+		}
+
+		#emoji-btn:hover{
+			transform: scale(1.23);
+			filter: grayscale(0);
+		}		
+	</style>
+</head>
+<body>
+	<span id="emoji-btn">
+		😀
+	</span>
+	<script>
+		const btn = document.getElementById('emoji-btn');
+		const emojis = [
+			"😐","😁","😂","🤣","😃","😄","😅","😆","🥰","😘","😎","😍","😋","😊","😉","😙","😚","🙂","🤗","🤩","🤔","🤨","😐","😑","😶","🙄","😏","😣","😥","😮","😛","😌","😴","🥱","😫","😪","😯","🤐"
+		];
+		btn.addEventListener("mouseover", ()=>{
+			btn.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+		})
+	</script>
+</body>
+</html>
